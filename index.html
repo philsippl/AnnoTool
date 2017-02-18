@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+
+    <script>
+
+      var key = location.hash.replace("#","");
+
+      var config = {
+        urls: {
+          "next": "index2.php?action=next&key="+key,
+          "set": "index2.php?action=set&id={{id}}&value={{value}}&key="+key,
+          "total": "index2.php?action=total&key="+key,
+          "open": "index2.php?action=open&key="+key,
+          "img": "img/",
+          "filetype": ".jpg"
+        },
+        control:{
+          list: [
+            {id: "1", value: "squirrel", color: "#C51119"},
+            {id: "2", value: "cat", color: "#EF9E30"},
+            {id: "3", value: "dog", color: "#EED739"},
+            {id: "4", value: "bird", color: "#75D82B"}
+          ]
+        }
+      };
+
+      THC.init(config);
+      $(document).ready(function(){
+        THC.start();
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Annotationstool</h1><br><br>
+      <div class="row">
+        <div class="col-md-7">
+
+          <img style="width:100%;height:auto" class="image" src="http://placehold.it/600x400">
+        </div>
+        <div class="col-md-5">
+          <div class="control-wrapper">
+            <!-- CONTROLS -->
+          </div>
+          <div class="counter">
+            In dieser Sitzung annotiert: <span id="counter">0</span><br>
+            Insgesamt <span id="done">0</span> von <span id="total">0</span> annotiert (<span id="percentage">0</span>)<br>
+            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height:20px;width: 0%;">
+              <span class="sr-only">...</span>
+            </div>
+            <br><br>
+            <button class="btn btn-default go-back" type="submit">Zurück zur vorherigen Grafik</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

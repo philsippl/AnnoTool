@@ -1,0 +1,16 @@
+html,body{
+  background: #eee;
+}
+
+.container{
+  margin-top: 50px;
+}
+
+.btn-control{
+  margin-bottom: 20px;
+}
+
+.counter{
+  text-align: center;
+  margin-top:40px;
+}
